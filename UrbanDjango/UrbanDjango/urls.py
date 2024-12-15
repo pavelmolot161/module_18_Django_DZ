@@ -17,6 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+### - 15.12.24
+
+from task2.views import func_temp, class_temp
+# from django.views.generic import TemplateView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', func_temp),
+    path('index/', class_temp.as_view()),                               ### -  as_view() - Стандарт запуска из класса
+    # path('index/', TemplateView.as_view(template_name='index2.html')) ### - ++.a - генерация шаблона прямо на месте
 ]
