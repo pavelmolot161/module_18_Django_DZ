@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -57,7 +57,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
                             ### - 15.12.24 Создаем папку "templates" внутри пространства BASE_DIR - переменная джанго
                             ## Дописываем в 'DIRS': [] == 'DIRS': [BASE_DIR / "templates"]
-        'DIRS': [BASE_DIR / "templates.second_task"],
+        'DIRS': [os.path.join(BASE_DIR, "templates/second_task")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

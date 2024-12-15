@@ -25,6 +25,6 @@ from task2.views import func_temp, class_temp
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', func_temp),
-    path('index/', class_temp.as_view()),                               ### -  as_view() - Стандарт запуска из класса
+    path('class_temp_sample/', class_temp.as_view()),       ### -  as_view() - Стандарт запуска из класса
     # path('index/', TemplateView.as_view(template_name='index2.html')) ### - ++.a - генерация шаблона прямо на месте
 ]
