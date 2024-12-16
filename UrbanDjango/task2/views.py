@@ -11,10 +11,10 @@ from django.shortcuts import render
 ### - "index.html" - указываем шаблон который хотим вернуть
 
 def func_temp(request):                                        ### - обработка логики и возврат шаблона пользователю
-    return render(request, "func_template.html")
+    return render(request, 'second_task/func_template.html')
 
 class class_temp(TemplateView):                                ### - класс наследуется от базового шаблона TemplateView
-    template_name = "class_template.html"                      ### - Указывается имя нашего шаблона
+    template_name = "second_task/class_template.html"                      ### - Указывается имя нашего шаблона
 
 
 

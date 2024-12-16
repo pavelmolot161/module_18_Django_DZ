@@ -20,11 +20,14 @@ from django.urls import path
 ### - 15.12.24
 
 from task2.views import func_temp, class_temp
+from task3.views import platform_task, games_task, cart_task
 # from django.views.generic import TemplateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', func_temp),
     path('class_temp_sample/', class_temp.as_view()),       ### -  as_view() - Стандарт запуска из класса
-    # path('index/', TemplateView.as_view(template_name='index2.html')) ### - ++.a - генерация шаблона прямо на месте
+    path('platform', platform_task),
+    path('games', games_task),
+    path('cart', cart_task)
 ]

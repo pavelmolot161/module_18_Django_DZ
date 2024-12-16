@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>games(21)</title>
+    <style>
+        .inline {
+            display: flex;
+            align-items: center;             /* Выравнивание по вертикали */
+        }
+                                             /* Добавляем стиль для ссылок */
+        a {
+            display: block;                  /* Изменяем отображение на блочный элемент */
+            margin: 5px 0;                   /* Добавляем отступы между ссылками */
+        }
+                                             /* Новый стиль для кнопки */
+        .button-container {
+            position: fixed;                 /* Фиксированное позиционирование */
+            bottom: 10px;                    /* Отступ от нижней границы */
+            left: 10px;                      /* Отступ от левой границы */
+        }
+
+        .small-button {                      /* Новый класс для уменьшенной кнопки */
+            padding: 1px 3px;               /* Уменьшаем размеры кнопки */
+            font-size: 10px;                 /* Уменьшаем размер шрифта */
+        }
+    </style>
+</head>
+<body>
+    <h2>Игры (22)</h2>
+
+    <div class="inline">
+        <ul>
+            <li>Atomic Heart (23)</li>
+        </ul>
+        {{ edit_1 }}
+        <button><h4>Купить (24)</h4></button>
+    </div>
+
+    <div class="inline">
+        <ul>
+            <li>Cyberpunk 2077 (25)</li>
+        </ul>
+        {{ edit_1 }}
+        <button><h4>Купить (26)</h4></button>
+    </div>
+
+    <div class="inline">
+        <ul>
+            <li>PayDay 2 (27)</li>
+        </ul>
+        {{ edit_1 }}
+        <button><h4>Купить (28)</h4></button>
+    </div>
+
+    <a href="http://127.0.0.1:8000/platform">
+        <button><h4>Вернуться обратно (29)</h4></button>
+    </a>
+
+    <div class="button-container">
+    <a href="http://127.0.0.1:8000/platform">
+        <button class="small-button"><h4>На Главную страничку (210)</h4></button>
+    </a>
+    </div>
+</body>
+</html>
