@@ -1,43 +1,31 @@
+{% extends "fourth_task/menu.html" %}    <!-- extends Указывает от какого шаблона будет наследоватся, или кто родительский класс-->
 
-{% extends 'menu.html' %}    <!-- extends Указывает от какого шаблона будет наследоватся, или кто родительский класс-->
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>cart(31)</title>
-    <style>
-        .inline {
-            display: flex;
-            align-items: center;             /* Выравнивание по вертикали */
-        }
-                                             /* Добавляем стиль для ссылок */
-        a {
-            display: block;                  /* Изменяем отображение на блочный элемент */
-            margin: 5px 0;                   /* Добавляем отступы между ссылками */
-        }
-                                             /* Новый стиль для кнопки */
-        .button-container {
-            position: fixed;                 /* Фиксированное позиционирование */
-            bottom: 10px;                    /* Отступ от нижней границы */
-            left: 10px;                      /* Отступ от левой границы */
-        }
 
-        .small-button {                      /* Новый класс для уменьшенной кнопки */
-            padding: 1px 3px;               /* Уменьшаем размеры кнопки */
-            font-size: 10px;                 /* Уменьшаем размер шрифта */
-        }
-    </style>
 </head>
-<body>
-    <h2>Извините, ваша корзина пуста (32)</h2>
-
-    <a href="http://127.0.0.1:8000/platform">
-        <button><h4>Вернуться обратно (33)</h4></button>
-    </a>
-
-    <div class="button-container">                        <!--Кнопка внизу для навигации, не по заданию-->
-    <a href="http://127.0.0.1:8000/platform">
-        <button class="small-button"><h4>На Главную страничку (34)</h4></button>
-    </a>
-    </div>
-</body>
 </html>
+<title>{% block title %}Cart{% endblock %}</title>
+{% block pagename %}                    <!--Заголовок страницы-->
+    <h2>Корзина</h2>
+    {{ block.super }}                   <!--Переносит инфу из блока pagename родительского класса-->
+{% endblock %}
+
+
+
+{% block menu %}
+    {{ block.super }}                   <!--Переносит инфу из блока menu родительского класса-->
+{% endblock %}
+
+
+{% block content %}
+    {{ block.super }}                   <!--Переносит инфу из блока content родительского класса-->
+{% endblock %}
+
+                                        <!--Информация о сайте-->
+{% block footer %}
+    <h3>Извините, ваша корзина пуста</h3>
+    {{ block.super }}                   <!--Переносит инфу из блока footer родительского класса-->
+{% endblock %}
+
+

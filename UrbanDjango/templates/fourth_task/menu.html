@@ -1,9 +1,9 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
+<!DOCTYPE html>
+<html lang="en">
 {% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>menu(11)</title>
+    <title>{% block title %}Menu{% endblock %}</title>
     <style>
                                     /* Добавляем стиль для ссылок */
         a {
@@ -23,6 +23,12 @@
             left: 160px;             /* Отступ от левой границы */
         }
 
+        .button_3-container {
+            position: fixed;        /* Фиксированное позиционирование */
+            bottom: 10px;           /* Отступ от нижней границы */
+            left: 325px;             /* Отступ от левой границы */
+        }
+
         .small-button {
             padding: 1px 3px;      /* Уменьшаем размеры кнопки */
             font-size: 10px;        /* Уменьшаем размер шрифта */
@@ -32,52 +38,52 @@
 </head>
 <body>
     <header>
-        {% block pagename %}                   <!--Заголовок страницы-->
-            <h1>Главная страница (12)1</h1>
+        {% block pagename %}                        <!--Заголовок страницы-->
+            <h1> </h1>
         {% endblock %}
     </header>
 
     <nav>
         {% block menu %}
         <ul>
-            <li><a href="#">Главная (13)</a></li>
-            <li><a href="http://127.0.0.1:8000/games">Магазин (14)</a></li>
-            <li><a href="http://127.0.0.1:8000/cart">Корзина (15)</a></li>
+            <li><a href="http://127.0.0.1:8000/">Главная </a></li>
+            <li><a href="http://127.0.0.1:8000/games">Магазин </a></li>
+            <li><a href="http://127.0.0.1:8000/cart">Корзина </a></li>
         </ul>
         {% endblock %}
     </nav>
 
-    {% block content %}
-    <h2> Сюда размещаем контент </h2>
-    <ul>
-        <li>Post 1</li>                                <!--Коментарий проверка-->
-        <li>Post 2</li>
-        <li>Post 3</li>
-    </ul>
-    {% endblock %}
 
-    <footer>                                    <!--Информация о сайте-->
+    {% block content %}
+        <h6> Сюда размещаем контент </h6>
+    {% endblock content %}
+
+
+    <footer>                                                                  <!--Информация о сайте-->
         {% block footer %}
             <p> 2023 Pavel Molot </p>
         {% endblock %}
     </footer>
 
 
-
     <!--########################################################################################################-->
 
-    <div class="button_1-container">             <!--Кнопка внизу для навигации, не по заданию-->
+    <div class="button_1-container">                 <!--Кнопка внизу для навигации, не по заданию-->
         <a href="http://127.0.0.1:8000/games">
-            <button class="small-button"><h4>На страничку c играми (16)</h4></button>
+            <button class="small-button"><h4>На страничку c играми</h4></button>
         </a>
     </div>
 
-     <div class="button_2-container">            <!--Кнопка внизу для навигации, не по заданию-->
+     <div class="button_2-container">                <!--Кнопка внизу для навигации, не по заданию-->
         <a href="http://127.0.0.1:8000/cart">
-            <button class="small-button"><h4>На страничку c корзиной (17)</h4></button>
+            <button class="small-button"><h4>На страничку c корзиной</h4></button>
+        </a>
+    </div>
+
+         <div class="button_3-container">            <!--Кнопка внизу для навигации, не по заданию-->
+        <a href="http://127.0.0.1:8000/">
+            <button class="small-button"><h4>На Главную страничку</h4></button>
         </a>
     </div>
 </body>
 </html>
-
-<!---->

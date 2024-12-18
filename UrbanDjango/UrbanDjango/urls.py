@@ -26,13 +26,12 @@ from task4.views import platform_task, games_task, cart_task, menu_task
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),                         ### - (+)
-    path('task4/', include("task4.urls"))                    ### - (+)
-
+    path('', platform_task),
+    path('admin/', admin.site.urls),                             ### - (+)
+    # path('task4/', include("task4.urls"))                      ### - (+)
+    # path('class_temp_sample/', class_temp.as_view()),          ### -  as_view() - Стандарт запуска из класса
+    path('menu', menu_task),                                     ### - (+)
+    path('platform', platform_task),
+    path('games', games_task),
+    path('cart', cart_task),
 ]
-#     # path('class_temp_sample/', class_temp.as_view()),          ### -  as_view() - Стандарт запуска из класса
-#     path('menu', menu_task),                                     ### - (+)
-#     path('platform', platform_task),
-#     path('games', games_task),
-#     path('cart', cart_task),
-# ]
