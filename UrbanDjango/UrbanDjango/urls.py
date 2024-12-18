@@ -15,19 +15,24 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include ### - (+)
 
 ### - 15.12.24
+### - 15.12.24 (+)
 
-from task2.views import func_temp, class_temp
-from task3.views import platform_task, games_task, cart_task
-# from django.views.generic import TemplateView
+# from task2.views import func_temp, class_temp
+#from task3.views import platform_task, games_task, cart_task   ### - 18.12.24 task3 переехал в task4
+from task4.views import platform_task, games_task, cart_task, menu_task
+from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', func_temp),
-    path('class_temp_sample/', class_temp.as_view()),       ### -  as_view() - Стандарт запуска из класса
-    path('platform', platform_task),
-    path('games', games_task),
-    path('cart', cart_task)
+    path('admin/', admin.site.urls),                         ### - (+)
+    path('task4/', include("task4.urls"))                    ### - (+)
+
 ]
+#     # path('class_temp_sample/', class_temp.as_view()),          ### -  as_view() - Стандарт запуска из класса
+#     path('menu', menu_task),                                     ### - (+)
+#     path('platform', platform_task),
+#     path('games', games_task),
+#     path('cart', cart_task),
+# ]

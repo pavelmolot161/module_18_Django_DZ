@@ -37,8 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'task2',                           ### - почему не дописали остальные приложения example1, example2, example3 - ???
-    'task3'
+    'task2',                   ### - почему не дописали остальные приложения example1, example2, example3 - они не нужны
+    'task3',
+    'task4'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'UrbanDjango.urls'
 
+### - 18.12.24   (+)
+### TEMPLATES_DIR = os.path.join(BASE_DIR, 'task4', 'templates')    ### - (+)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -60,7 +64,9 @@ TEMPLATES = [
                             ## Дописываем в 'DIRS': [] == 'DIRS': [BASE_DIR / "templates/second_task"]
                             ### - 16.12.24 Дополняем папку "templates"
                             ## Дописываем в 'DIRS': [] == 'DIRS': [BASE_DIR / "templates/second_task", "templates/third_task"]
-        'DIRS': [os.path.join(BASE_DIR, "templates")],
+                            ### - 17.12.24 Вернули все обратно 'DIRS': [os.path.join(BASE_DIR, "templates")],
+    ### 'DIRS': [os.path.join(BASE_DIR, "templates")],
+        'DIRS': (BASE_DIR, "templates"),
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
