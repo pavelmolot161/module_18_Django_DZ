@@ -66,7 +66,7 @@ TEMPLATES = [
                             ## Дописываем в 'DIRS': [] == 'DIRS': [BASE_DIR / "templates/second_task", "templates/third_task"]
                             ### - 17.12.24 Вернули все обратно 'DIRS': [os.path.join(BASE_DIR, "templates")],
     ### 'DIRS': [os.path.join(BASE_DIR, "templates")],
-        'DIRS': (BASE_DIR, "templates"),
+        'DIRS': [BASE_DIR / "templates"],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
