@@ -14,24 +14,29 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.urls import path, include
 from django.contrib import admin
-from django.urls import path, include ### - (+)
 
-### - 15.12.24
-### - 15.12.24 (+)
 
-# from task2.views import func_temp, class_temp
-#from task3.views import platform_task, games_task, cart_task   ### - 18.12.24 task3 переехал в task4
+
+### - 23.12.24 (+)
+
+
 from task4.views import platform_task, games_task, cart_task, menu_task
 from django.views.generic import TemplateView
 
-urlpatterns = [
-    path('', platform_task),
-    path('admin/', admin.site.urls),                             ### - (+)
-    # path('task4/', include("task4.urls"))                      ### - (+)
-    # path('class_temp_sample/', class_temp.as_view()),          ### -  as_view() - Стандарт запуска из класса
-    path('menu', menu_task),                                     ### - (+)
-    path('platform', platform_task),
-    path('games', games_task),
-    path('cart', cart_task),
+# urlpatterns = [
+#     path('', platform_task),
+#     path('admin/', admin.site.urls),
+#     path('menu', menu_task),
+#     path('platform', platform_task),
+#     path('games', games_task),
+#     path('cart', cart_task),
+# ]
+
+urlpatterns = [                                        ### - (+)
+    path('', platform_task, name='platform_task'),
+    path('menu', menu_task, name='menu_task'),
+    path('games', games_task, name='games_task'),
+    path('cart', cart_task, name='cart_task'),
 ]
